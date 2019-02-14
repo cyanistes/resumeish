@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: auto;
+  max-width: 1000px;
+}
+
+h1 {
+  font-family: serif;
+  font-size: 1.5em;
+  margin: 0 0 2em 0;
+}
+
+.year_interval {
+  float: right;
+}
+
+.chapter_heading::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+article {
+  padding: 3em;
+  font-family: sans-serif;
+}
+
+.bio {
+  background-color: peachpuff;
+
+  &--facts{
+    //margin-left: 1em;
+    list-style: none;
+    padding: 0;
+  }
+
+  &--image {
+    object-fit: cover;
+    object-position: 50% 20%;
+    mix-blend-mode: darken;
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+.adolescence {
+  background-color: mediumaquamarine;
+  background-image: url("../images/concentration.jpg");
+  background-blend-mode: lighten;
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.twenties {
+  background-color: darkorange;
+  background-image: url("../images/hedge.jpg");
+  background-blend-mode: color-burn;
+  background-position: 50% 45%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hospitals {
+  background-color: green;
+  background-image: url("../images/cable_guy2.jpg");
+  background-blend-mode: color-dodge;
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.yarn {
+  background-color: rgba(255,192,203, 1);
+  background-image: url("../images/trade_show2.jpg");
+  background-blend-mode: color-burn;
+  background-position: 75% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .bio {
+    display: grid;
+    grid:
+      'facts image' 100vh
+      / 1fr 1fr;
+
+    &--content {
+      grid-area: facts;
+    }
+    &--image {
+      grid-area: image;
+    }
+  }
+}
